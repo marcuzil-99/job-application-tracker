@@ -20,7 +20,7 @@ public class UserController {
 		return uService.findAllUsers();
 	}
 	
-	@PostMapping
+	@PostMapping("/register")
 	public void createUser(@RequestBody User user) {
 		uService.createUser(user);
 	}
@@ -28,6 +28,11 @@ public class UserController {
 	@DeleteMapping("/{id}")
 	public void deleteUser(@PathVariable Long id) {
 		uService.deleteUser(id);
+	}
+	
+	@PostMapping("/login")
+	public void login(@RequestBody User user) {
+		uService.login(user);
 	}
 
 }
